@@ -18,6 +18,7 @@ print("To choose your hand, type:\n")
 print("""1 or "Rock" for Rock\n""")
 print("""2 or "Paper" for Paper\n""")
 print("""3 or "Scissor" for Scissors\n\n""")
+print(""""Quit" to quit the game\n\n""")
 
     
 #game loop
@@ -27,6 +28,9 @@ while running:
     print("There were " + str(ties) + " ties\n\n")
     print("Round " + str(round_num) + "\n")
     choice = input("Rock, Paper, or Scissors? (Input your choice)\n")
+    if (choice.lower() == "quit"):
+        print("Goodbye, thanks for playing!")
+        break
     ai_num = random.randint(1,4)
     your_num = int(choice)
     
