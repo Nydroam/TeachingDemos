@@ -15,9 +15,9 @@ running = True
 #intro prompt
 print("Rock Paper Scissors! Would you like to try against this super amazing AI?\n")
 print("To choose your hand, type:\n")
-print("""1 or "Rock" for Rock\n""")
-print("""2 or "Paper" for Paper\n""")
-print("""3 or "Scissor" for Scissors\n\n""")
+print("""1 or "Rock" for Rock""")
+print("""2 or "Paper" for Paper""")
+print("""3 or "Scissor" for Scissors\n""")
 print(""""Quit" to quit the game\n\n""")
 
     
@@ -32,8 +32,16 @@ while running:
         print("Goodbye, thanks for playing!")
         break
     ai_num = random.randint(1,4)
-    your_num = int(choice)
-    
+    if choice.lower() == "rock":
+        your_num = 1
+    elif choice.lower() == "paper":
+        your_num = 2
+    elif choice.lower() == "scissors":
+        your_num = 3
+    elif choice == "1" or choice == "2" or choice == "3":
+        your_num = int(choice)
+    else:
+        continue
     #chooses winner based on number arguments
     #1 is rock, 2 is paper, 3 is scissors
     if your_num == ai_num:
@@ -57,5 +65,6 @@ while running:
     if your_num == 3 and ai_num == 2:
         print("The ai chose paper. You Win!")
         your_score += 1
+    round_num += 1
     
         
