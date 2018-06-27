@@ -71,7 +71,9 @@ while playing:
             break
     else:
         while(progress.find(guess) != -1):
+            index = progress.find(guess)
             progress = progress.replace(guess,"*",1)
+            
             if index+1 != len(answer):
                 str_displayed = str_displayed[0:index] + guess + str_displayed[index+1:]
             else:
